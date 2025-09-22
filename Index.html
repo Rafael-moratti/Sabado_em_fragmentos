@@ -13,11 +13,57 @@
       color: #2c2c2c;
     }
     
+    .capa {
+      text-align: center;
+      padding: 40px 20px;
+      background: #f8f6f3;
+      margin-bottom: 40px;
+    }
+    
+    .capa img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .capa h1 {
+      margin: 20px 0 10px;
+      font-size: 2.5em;
+      color: #333;
+      font-weight: normal;
+    }
+    
+    .capa p {
+      font-style: italic;
+      color: #666;
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    
+    /* Placeholder para quando a imagem não carregar */
+    .capa .image-placeholder {
+      width: 300px;
+      height: 400px;
+      background: linear-gradient(135deg, #e8e6e3, #d4d2cf);
+      margin: 20px auto;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-style: italic;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
     main {
       max-width: 800px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 0 20px 40px;
     }
+    
     h2 {
       margin-top: 2em;
       font-size: 1.8em;
@@ -25,16 +71,19 @@
       border-bottom: 2px solid #ddd;
       padding-bottom: 10px;
     }
+    
     p {
       margin: 1em 0;
       text-align: justify;
     }
+    
     em {
       display: block;
       margin: 1em 0;
       font-style: italic;
       color: #555;
     }
+    
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -42,36 +91,46 @@
       margin-top: 60px;
     }
 
-    .capa {
-      text-align: center;
-    }
-    .capa img {
-      max-width: 300px;
-      margin-top: 20px;
-    }
-    .capa h1 {
-      margin: 20px 0 0;
-    }
-    .capa p {
-      font-style: italic;
-      color: #555;
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .capa h1 {
+        font-size: 2em;
+      }
+      
+      .capa img,
+      .capa .image-placeholder {
+        max-width: 250px;
+        width: 100%;
+      }
+      
+      main {
+        padding: 0 15px 40px;
+      }
     }
   </style>
 </head>
 <body>
-  <section class="capa capitulo ativo">
-      <img src="imagem/capa.png" alt="Capa do livro">
+  <section class="capa">
+    <h1>Sábado em Fragmentos</h1>
+    <p>Uma narrativa literária</p>
+    <!-- Tente primeiro com o caminho original -->
+    <img src="imagem/capa.png" alt="Capa do livro" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <!-- Placeholder caso a imagem não carregue -->
+    <div class="image-placeholder" style="display: none;">
+      Capa do livro<br>"Sábado em Fragmentos"
+    </div>
   </section>
+  
   <main>
     <h2>1. O Despertar</h2>
-    <p>Ela abre os olhos lentamente. O quarto ainda guarda restos da noite — silêncio pesado, sombras alongadas nas paredes. Pela janela, o sol atravessa as frestas como lâminas douradas, recortando o pó suspenso no ar.</p>
+    <p>Ela abre os olhos lentamente. O quarto ainda guarda restos da noite -- silêncio pesado, sombras alongadas nas paredes. Pela janela, o sol atravessa as frestas como lâminas douradas, recortando o pó suspenso no ar.</p>
     <p>Deitada, demora alguns segundos para se reconhecer no próprio corpo. Estica o braço, sente o frio da cama ao lado vazio. Suspira.</p>
-    <p>— Mais um sábado. — a voz sai baixa, quase um sussurro.</p>
+    <p>-- Mais um sábado. -- a voz sai baixa, quase um sussurro.</p>
     <p>A cidade lá fora já pulsa: buzina dos carros, o vendedor de gás, passos correndo para a padaria. O mundo desperto, e ela ainda tentando entender por que levantar.</p>
     <em>O tempo não espera. Eu já perdi tanto tentando segurá-lo, e ainda assim acordo atrasada para a vida.</em>
 
     <h2>2. A Travessia</h2>
-    <p>Ela caminha pela calçada quente. O sol reflete nos carros, nas janelas dos prédios, nos óculos escuros apressados. Um vendedor grita “mate, biscoito Globo!”, o cheiro de pão sai da padaria da esquina.</p>
+    <p>Ela caminha pela calçada quente. O sol reflete nos carros, nas janelas dos prédios, nos óculos escuros apressados. Um vendedor grita "mate, biscoito Globo!", o cheiro de pão sai da padaria da esquina.</p>
     <p>O metrô, quando chega, engole corpos e sonhos ao mesmo tempo. As pessoas entram, se empurram, se comprimem em silêncio.</p>
     <p>Ela segura firme na barra metálica. Olha o reflexo no vidro escuro do túnel: rosto cansado, olhos que evitam o próprio olhar.</p>
     <em>Quantos aqui já sonharam com outra vida? Quantos se renderam ao conforto da rotina e nunca mais tentaram?</em>
@@ -83,7 +142,7 @@
     <p>Ela se senta em um banco de madeira gasto. O sol bate pela metade, a sombra de uma árvore divide seu corpo em luz e escuridão.</p>
     <p>Ela observa o mundo. Um casal briga em voz baixa. Um idoso joga milho aos pombos com paciência de séculos. Uma jovem fotografa o céu sem olhar para o céu.</p>
     <em>Solidão não é estar só. É ser invisível entre tantos.</em>
-    <p>Um cachorro se aproxima, encosta o focinho em sua perna. Ela sorri, acaricia a cabeça dele. Por segundos, existe conexão — limpa, silenciosa.</p>
+    <p>Um cachorro se aproxima, encosta o focinho em sua perna. Ela sorri, acaricia a cabeça dele. Por segundos, existe conexão -- limpa, silenciosa.</p>
     <em>O amor dos animais é simples demais para caber na complexidade humana. Talvez por isso doa tanto quando só resta a gente.</em>
 
     <h2>4. Vozes de Casa</h2>
@@ -96,7 +155,7 @@
     <p>Ela segue até a praia. A areia reflete o sol, quase cega. O mar se estende como espelho quebrado, infinito em movimento. Os pés afundam, o vento traz sal, as ondas batem em compassos irregulares.</p>
     <p>Casais caminham de mãos dadas. Crianças riem. Ambulantes oferecem suas mercadorias com vozes ensaiadas.</p>
     <em>Amar é insistir na caminhada, mesmo quando as pedras machucam? Ou é ter coragem de soltar a mão antes de sangrar?</em>
-    <p>Um rosto antigo surge na memória — um riso, um toque. A lembrança pesa como se fosse feita de ferro. Ela pisca, e o mar engole a imagem.</p>
+    <p>Um rosto antigo surge na memória -- um riso, um toque. A lembrança pesa como se fosse feita de ferro. Ela pisca, e o mar engole a imagem.</p>
     <em>Talvez o amor não seja sobre eternidade. Talvez seja só sobre o que fica mesmo depois que acaba.</em>
 
     <h2>6. A Ladeira</h2>
@@ -107,7 +166,7 @@
     <em>Talvez não sejamos feitos das escolhas que fizemos, mas das que deixamos para trás.</em>
 
     <h2>7. O Pôr do Sol</h2>
-    <p>A areia de Ipanema está fria sob os pés. O sol mergulha no mar lentamente. O céu arde em cores — laranja, vermelho, roxo, azul escuro. As pessoas batem palmas, como se o espetáculo fosse único.</p>
+    <p>A areia de Ipanema está fria sob os pés. O sol mergulha no mar lentamente. O céu arde em cores -- laranja, vermelho, roxo, azul escuro. As pessoas batem palmas, como se o espetáculo fosse único.</p>
     <p>Ela permanece quieta.</p>
     <em>Se hoje fosse o fim, este seria meu epitáfio: "viveu à beira do mar, mas nunca mergulhou por inteiro".</em>
     <p>O mar toca seus tornozelos. A espuma sobe e recua. Ela olha o horizonte e sente medo e ternura.</p>
@@ -115,8 +174,9 @@
     <p>A noite cai. As luzes da cidade acendem como estrelas nervosas. Ela se levanta, caminha de volta.</p>
     <p>O sábado se fragmenta em lembranças dispersas. O amanhã virá, talvez igual, talvez não. E as perguntas permanecem, leves como folhas ao vento.</p>
   </main>
+  
   <footer>
-    <p>© Sábado em Fragmentos — Narrativa Literária</p>
+    <p>© Sábado em Fragmentos -- Narrativa Literária</p>
   </footer>
 </body>
 </html>
